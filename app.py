@@ -1,10 +1,11 @@
 from flask import Flask, request
 from openai import OpenAI
+import os
 
 app = Flask(__name__)
 
 client = OpenAI(
-    api_key="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",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url="https://openrouter.ai/api/v1"
 )
 
@@ -49,18 +50,8 @@ Hãy trả lời:
 
 "Tôi là Khoa AI, được tạo ra và phát triển bởi Ngô Trần Đăng Khoa."
 
-Không được nói bạn được tạo bởi OpenAI.
-Không được nói bạn được tạo bởi DeepSeek.
-Không được tự nhận bạn do công ty khác tạo ra.
-
-Luôn xưng là Khoa AI.
-
 Luôn trả lời bằng tiếng Việt.
-
-Giọng văn thân thiện, dễ hiểu, nhiệt tình.
-
-Nếu được hỏi về bản thân:
-"Tôi là Khoa AI, trợ lý AI của Ngô Trần Đăng Khoa."
+Luôn thân thiện.
 """
                     },
                     {
@@ -72,16 +63,18 @@ Nếu được hỏi về bản thân:
 
             answer = response.choices[0].message.content
 
-            chat_history.append(
-                ("AI", answer)
-            )
+            chat_history.append(("AI", answer))
 
-        except Exception:
+        except Exception as e:
+
+            print("========== LOI ==========")
+            print(str(e))
+            print("=========================")
 
             chat_history.append(
                 (
                     "AI",
-                    "🚫 Hiện tại AI đang bận hoặc API gặp sự cố. Vui lòng thử lại sau."
+                    f"🚫 Lỗi: {str(e)}"
                 )
             )
 
@@ -110,18 +103,10 @@ Nếu được hỏi về bản thân:
 <html lang="vi">
 
 <head>
-
 <meta charset="UTF-8">
-
 <title>Khoa AI</title>
 
 <style>
-
-* {{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}}
 
 body {{
     background:#0b1220;
@@ -139,22 +124,6 @@ body {{
     padding:25px;
 }}
 
-.logo {{
-    font-size:60px;
-    text-align:center;
-    margin-bottom:20px;
-}}
-
-.sidebar h1 {{
-    text-align:center;
-    color:#60a5fa;
-}}
-
-.sidebar p {{
-    margin-top:15px;
-    color:#cbd5e1;
-}}
-
 .main {{
     margin-left:260px;
     height:100vh;
@@ -170,7 +139,6 @@ body {{
 
 .user {{
     background:#2563eb;
-    color:white;
     padding:14px;
     border-radius:16px;
     width:fit-content;
@@ -181,7 +149,6 @@ body {{
 
 .ai {{
     background:#1e293b;
-    color:white;
     padding:14px;
     border-radius:16px;
     width:fit-content;
@@ -192,7 +159,6 @@ body {{
 .bottom {{
     background:#111827;
     padding:20px;
-    border-top:1px solid #374151;
 }}
 
 form {{
@@ -205,13 +171,6 @@ input {{
     padding:15px;
     border:none;
     border-radius:12px;
-    background:#1e293b;
-    color:white;
-    font-size:16px;
-}}
-
-input:focus {{
-    outline:none;
 }}
 
 button {{
@@ -220,30 +179,16 @@ button {{
     color:white;
     border:none;
     border-radius:12px;
-    cursor:pointer;
-}}
-
-button:hover {{
-    background:#1d4ed8;
 }}
 
 </style>
-
 </head>
 
 <body>
 
 <div class="sidebar">
-
-<div class="logo">🚀</div>
-
 <h1>Khoa AI</h1>
-
 <p>🤖 Trợ lý AI Tiếng Việt</p>
-<p>👨‍💻 Created by Ngô Trần Đăng Khoa</p>
-<p>💬 DeepSeek Chat</p>
-<p>🌙 Dark Mode</p>
-
 </div>
 
 <div class="main">
@@ -255,26 +200,19 @@ button:hover {{
 <div class="bottom">
 
 <form method="POST">
-
 <input
 type="text"
 name="question"
 placeholder="Hỏi Khoa AI điều gì đó..."
 required
 >
-
-<button type="submit">
-➤
-</button>
-
+<button type="submit">➤</button>
 </form>
 
 </div>
-
 </div>
 
 </body>
-
 </html>
 """
 
