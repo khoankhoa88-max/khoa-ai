@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💖 20/10 VIP 💖</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+background:
+radial-gradient(circle at top,
+#5b21b6 0%,
+#1e1b4b 35%,
+#020617 100%);
+}
+
+/* CANVAS */
+#bg{
+position:fixed;
+inset:0;
+}
+
+/* GLASS CARD */
+
+.card{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+width:min(950px,90%);
+
+padding:50px;
+
+background:
+rgba(255,255,255,.07);
+
+border:
+1px solid rgba(255,255,255,.15);
+
+backdrop-filter:
+blur(20px);
+
+border-radius:35px;
+
+z-index:20;
+
+text-align:center;
+
+box-shadow:
+0 0 30px rgba(255,105,180,.4),
+0 0 80px rgba(255,105,180,.2);
+
+transition:.2s;
+}
+
+/* HEART */
+
+.big-heart{
+
+font-size:140px;
+
+filter:
+drop-shadow(0 0 15px #ff0080)
+drop-shadow(0 0 60px #ff0080);
+
+animation:
+beat 1.2s infinite;
+}
+
+@keyframes beat{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+}
+
+/* TITLE */
+
+.title{
+
+font-size:80px;
+font-weight:bold;
+
+background:
+linear-gradient(
+90deg,
+#ff4d6d,
+#ffd166,
+#ffffff,
+#ff4d6d
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:
+rainbow 6s linear infinite,
+glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes rainbow{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:400%;
+}
+
+}
+
+@keyframes glow{
+
+from{
+filter:
+drop-shadow(0 0 10px white);
+}
+
+to{
+filter:
+drop-shadow(0 0 25px white)
+drop-shadow(0 0 50px hotpink);
+}
+
+}
+
+.message{
+
+font-size:30px;
+
+margin-top:20px;
+
+color:white;
+
+text-shadow:
+0 0 15px hotpink;
+
+line-height:1.8;
+}
+
+.date{
+
+margin-top:25px;
+
+font-size:26px;
+
+color:#ffd6e7;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:35px;
+animation:fly 12s linear infinite;
+z-index:2;
+}
+
+@keyframes fly{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:
+translateY(-120vh)
+rotate(360deg);
+opacity:0;
+}
+
+}
+
+</style>
+</head><!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💖 20/10 VIP 💖</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+overflow:hidden;
+height:100vh;
+background:
+radial-gradient(circle at top,
+#5b21b6 0%,
+#1e1b4b 35%,
+#020617 100%);
+}
+
+/* CANVAS */
+#bg{
+position:fixed;
+inset:0;
+}
+
+/* GLASS CARD */
+
+.card{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+width:min(950px,90%);
+
+padding:50px;
+
+background:
+rgba(255,255,255,.07);
+
+border:
+1px solid rgba(255,255,255,.15);
+
+backdrop-filter:
+blur(20px);
+
+border-radius:35px;
+
+z-index:20;
+
+text-align:center;
+
+box-shadow:
+0 0 30px rgba(255,105,180,.4),
+0 0 80px rgba(255,105,180,.2);
+
+transition:.2s;
+}
+
+/* HEART */
+
+.big-heart{
+
+font-size:140px;
+
+filter:
+drop-shadow(0 0 15px #ff0080)
+drop-shadow(0 0 60px #ff0080);
+
+animation:
+beat 1.2s infinite;
+}
+
+@keyframes beat{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+}
+
+/* TITLE */
+
+.title{
+
+font-size:80px;
+font-weight:bold;
+
+background:
+linear-gradient(
+90deg,
+#ff4d6d,
+#ffd166,
+#ffffff,
+#ff4d6d
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:
+rainbow 6s linear infinite,
+glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes rainbow{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:400%;
+}
+
+}
+
+@keyframes glow{
+
+from{
+filter:
+drop-shadow(0 0 10px white);
+}
+
+to{
+filter:
+drop-shadow(0 0 25px white)
+drop-shadow(0 0 50px hotpink);
+}
+
+}
+
+.message{
+
+font-size:30px;
+
+margin-top:20px;
+
+color:white;
+
+text-shadow:
+0 0 15px hotpink;
+
+line-height:1.8;
+}
+
+.date{
+
+margin-top:25px;
+
+font-size:26px;
+
+color:#ffd6e7;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:35px;
+animation:fly 12s linear infinite;
+z-index:2;
+}
+
+@keyframes fly{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:
+translateY(-120vh)
+rotate(360deg);
+opacity:0;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- TIM BAY -->
+
+<div class="heart" style="left:5%;animation-delay:0s">💖</div>
+<div class="heart" style="left:15%;animation-delay:2s">💕</div>
+<div class="heart" style="left:25%;animation-delay:4s">💗</div>
+<div class="heart" style="left:35%;animation-delay:6s">💘</div>
+<div class="heart" style="left:45%;animation-delay:8s">💝</div>
+<div class="heart" style="left:55%;animation-delay:10s">❤️</div>
+<div class="heart" style="left:65%;animation-delay:1s">💞</div>
+<div class="heart" style="left:75%;animation-delay:3s">💓</div>
+<div class="heart" style="left:85%;animation-delay:5s">💖</div>
+<div class="heart" style="left:95%;animation-delay:7s">💕</div>
+
+<!-- CARD -->
+
+<div class="card">
+
+    <div class="big-heart">
+        💖
+    </div>
+
+    <div class="title">
+        CHÚC MỪNG 20/10
+    </div>
+
+    <div class="message">
+        Chúc Thy có một buổi tối ngày lễ vui vẻ ✨
+    </div>
+
+    <div class="message">
+        Chúc Thy luôn luôn vui vẻ, xinh đẹp, hạnh phúc
+        và nhận được thật nhiều yêu thương 💕
+    </div>
+
+    <div class="date">
+        🌹 20 / 10 / 2026 🌹
+    </div>
+
+</div>
+
+<script>
+
+const canvas =
+document.getElementById("bg");
+
+const ctx =
+canvas.getContext("2d");
+
+function resize(){
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener(
+"resize",
+resize
+);
+
+/* 1000 NGÔI SAO */
+
+const stars=[];
+
+for(let i=0;i<1000;i++){
+
+stars.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+
+r:Math.random()*2,
+
+v:Math.random()*1.5+0.3
+
+});
+
+}
+
+/* SAO BĂNG */
+
+const meteors=[];
+
+setInterval(()=>{
+
+meteors.push({
+
+x:Math.random()*canvas.width,
+
+y:-50,
+
+vx:10,
+
+vy:5
+
+});
+
+},1200);
+
+function animate(){
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+/* STARS */
+
+stars.forEach(star=>{
+
+ctx.beginPath();
+
+ctx.arc(
+star.x,
+star.y,
+star.r,
+0,
+Math.PI*2
+);
+
+ctx.fillStyle="white";
+
+ctx.fill();
+
+star.y += star.v;
+
+if(star.y > canvas.height){
+
+star.y = 0;
+star.x =
+Math.random()*canvas.width;
+
+}
+
+});
+
+/* METEORS */
+
+meteors.forEach(m=>{
+
+ctx.beginPath();
+
+ctx.moveTo(
+m.x,
+m.y
+);
+
+ctx.lineTo(
+m.x - 120,
+m.y - 40
+);
+
+ctx.strokeStyle="white";
+
+ctx.lineWidth=2;
+
+ctx.stroke();
+
+m.x += m.vx;
+m.y += m.vy;
+
+});
+
+requestAnimationFrame(
+animate
+);
+
+}
+
+animate();
+/* ========================= */
+/* HẠT SÁNG THEO CHUỘT */
+/* ========================= */
+
+let particles = [];
+
+document.addEventListener("mousemove",(e)=>{
+
+    for(let i=0;i<3;i++){
+
+        particles.push({
+
+            x:e.clientX,
+            y:e.clientY,
+
+            vx:(Math.random()-0.5)*3,
+            vy:(Math.random()-0.5)*3,
+
+            life:40
+
+        });
+
+    }
+
+});
+
+/* ========================= */
+/* PHÁO HOA KHI CLICK */
+/* ========================= */
+
+document.addEventListener("click",(e)=>{
+
+    for(let i=0;i<50;i++){
+
+        particles.push({
+
+            x:e.clientX,
+            y:e.clientY,
+
+            vx:(Math.random()-0.5)*12,
+            vy:(Math.random()-0.5)*12,
+
+            life:80,
+
+            color:`hsl(${Math.random()*360},100%,70%)`
+
+        });
+
+    }
+
+});
+
+/* ========================= */
+/* VẼ PARTICLES */
+/* ========================= */
+
+function drawParticles(){
+
+    particles.forEach((p,index)=>{
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            2,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle =
+        p.color || "hotpink";
+
+        ctx.fill();
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        p.life--;
+
+        if(p.life<=0){
+
+            particles.splice(index,1);
+
+        }
+
+    });
+
+    requestAnimationFrame(
+        drawParticles
+    );
+
+}
+
+drawParticles();
+
+/* ========================= */
+/* CARD 3D */
+/* ========================= */
+
+const card =
+document.querySelector(".card");
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+    const x =
+    (
+    e.clientX /
+    window.innerWidth
+    -0.5
+    )*20;
+
+    const y =
+    (
+    e.clientY /
+    window.innerHeight
+    -0.5
+    )*20;
+
+    card.style.transform =
+    `
+    translate(-50%,-50%)
+    rotateY(${x}deg)
+    rotateX(${-y}deg)
+    `;
+
+});
+
+/* ========================= */
+/* TIA SÁNG NGẪU NHIÊN */
+/* ========================= */
+
+setInterval(()=>{
+
+    const flash =
+    document.createElement("div");
+
+    flash.style.position="fixed";
+    flash.style.inset="0";
+
+    flash.style.background=
+    "rgba(255,255,255,.05)";
+
+    flash.style.pointerEvents=
+    "none";
+
+    document.body.appendChild(
+    flash
+    );
+
+    flash.animate([
+    {opacity:0},
+    {opacity:1},
+    {opacity:0}
+    ],{
+        duration:300
+    });
+
+    setTimeout(()=>{
+        flash.remove();
+    },300);
+
+},8000);
+
+</script>
+
+</body>
+</html>
